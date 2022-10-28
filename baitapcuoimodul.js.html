@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div h1 {
+            text-align: center;
+            color: #F4A460;
+            font-size: 60px;
+        }
+        h2 {
+            padding-right: 500px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        div{
+            padding-left: 100px;
+        }
+         monan{
+            border:0px;
+        }
+    </style>
+</head>
+<body style='background:url("https://kynguyenlamdep.com/wp-content/uploads/2021/12/hinh-anh-bau-troi-xanh.jpg"); background-size:cover;'>
+<a href="baitapcuoimodul1.html"target="_blank"><img  class="im" src="https://ameovat.com/wp-content/uploads/2016/08/cach-lam-nem-thinh-600x403.jpg" height="40px", width="40px"></a>
+<div class="grid-item sidebar-2"><h1>Chuyên mục bạn đọc</h1>
+    <h2>Các bạn hãy giới thiệu các món ăn đặc biệt của quê hương mình để các món ăn đó được lan tỏa tới thật nhiều du
+        khách</h2>
+    <table class="monan">
+        <tr>
+            <td>Các món ăn ngon</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Món ăn:<input id="inputmon" placeholder="Món ăn"></td>
+        </tr>
+        <tr>
+            <td> Địa chỉ: <input id="inputchi" placeholder="Địa chỉ"></td>
+        </tr>
+        <tr>
+            <td> Hình ảnh: <input id="inputanh" placeholder="Hình ảnh"></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    <button onclick="them()">Thêm</button>
+    <h3>Danh sách</h3>
+
+    <table id="show" width="400">
+
+    </table>
+
+</div>
+<script>
+    let names = [["Nem chua", "Thanh Hóa", "https://cdn.beptruong.edu.vn/wp-content/uploads/2018/05/cach-lam-nem-chua.jpg"]];
+    [["Canh cá", "Quỳnh Côi-Thái Bình", "http://sovhttdl.thaibinh.gov.vn/upload/80611/fck/files/765c920a072f2818c3aca543e7615865.jpg"]];
+    let danhshow = document.getElementById("show");
+
+    function show() {
+        let str = " <tr>\n" +
+            "            <th>Món ăn</th>\n" +
+            "            <th>Địa chỉ</th>\n" +
+            "            <th>Hình ảnh</th>\n" +
+            "        </tr>";
+        for (let i = 0; i < names.length; i++) {
+            str += `<tr>
+    <td>${names[i][0]}</td>
+    <td>${names[i][1]}</td>
+    <td><img src="${names[i][2]}" width="150" height="100"></td>
+    <td><button onclick="sua(${i})">Sửa</button></td>
+    <td><button onclick="xoa(${i})">Xóa</button></td>
+</tr>`
+        }
+        danhshow.innerHTML = str;
+    }
+
+    show();
+
+    function them() {
+        let mon = document.getElementById("inputmon").value;
+        let chi = document.getElementById("inputchi").value;
+        let anh = document.getElementById("inputanh").value;
+        names.push([mon, chi, anh]);
+        show();
+    }
+
+    function sua(index) {
+        let mon = prompt("Nhập món muốn sửa");
+        let chi = prompt("Nhập  địa chỉ muốn sửa");
+        let anh = prompt("Nhập ảnh muốn sửa");
+        names.splice(index, 1, [mon, chi, anh]);
+        show();
+    }
+
+    function xoa(index) {
+        names.splice(index, 1)
+        show();
+    }
+
+</script>
+</body>
+</html>

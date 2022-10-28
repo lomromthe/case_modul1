@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="Account_form.js"></script>
+<body>
+<div align="center">
+    <h1>Form Đăng Ký</h1>
+    Nhập username: <input id="username" placeholder="username"> <br>
+    Nhập Password: <input id="password" placeholder="password" type="password"><br>
+    <br>
+    <button onclick="register()">Đăng ký</button>
+</div>
+
+</body>
+</html>
+<script>
+
+    let accounts = JSON.parse(localStorage.getItem("accounts"));
+    if (accounts === null) {
+        accounts = [];
+    }
+    function register() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let account = new Account(username, password);
+        accounts.push(account);
+        localStorage.setItem("accounts", JSON.stringify(accounts));
+        location.href = "form_dang_nhap.html";
+    }
+</script>

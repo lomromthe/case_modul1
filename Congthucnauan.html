@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    td {
+        border: 3px solid black;
+    }
+
+    table {
+        border: 0px;
+        margin-left: 240px;
+    }
+
+    table img {
+        height: 360px;
+        width: 620px;
+    }
+
+    h1 {
+        color: #696969;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    class hai bon sau {
+        table-border-color: blanchedalmond;
+    }
+
+    input {
+
+        margin-left: 1080px;
+    }
+
+    myTable tr td {
+        width: 700px;
+    }
+</style>
+<input type="text" id="myInput" onkeyup=" myFunction()" placeholder="Tim kiếm">
+<body style='background:url("http://imgs.vietnamnet.vn/Images/vnn/2014/04/25/15/20140425152558-troi1.jpg"); background-size:cover;'>
+<a href="baitapcuoimodul1.html" target="_blank"><img class="im"
+                                                     src="https://ameovat.com/wp-content/uploads/2016/08/cach-lam-nem-thinh-600x403.jpg"
+                                                     height="40px" , width="40px"></a>
+<h1>Công thức nấu các món ăn ngon tại nhà</h1>
+<h3>Chuyên mục giúp bạn trở thành Master Chef</h3>
+<h3>Chuyên mục sẽ mang tới cho bạn cách nấu những món ngon đơn giản, nhiều lựa chọn như món khai vị, ăn vặt, món
+    chính...Từ những món ăn vốn đã quen thuộc tới những món mới giúp bạn bắt kịp xu hướng ẩm thực trọng và ngoài
+    nước.</h3>
+<h3>Với mỗi món ăn có cách nấu nướng, chế biến khác nhau. Tuy vậy đừng lo lắng nhé, chuyên mục luôn giúp bạn tìm ta
+    những bí quyết nấu ăn đơn giản mà bạn chưa từng nghĩ tới.Và bên cạnh các công thức nấu ăn, chuyên mục còn hướng dẫn
+    bạn các thuật ngữ , mẹo vặt hữu ích giúp cho viẹc nấu nướng của bạn trở nên dễ dàng.</h3>
+<table id="myTable">
+    <tr>
+        <td>Cá kho</td>
+        <td><img src="https://i.ytimg.com/vi/zvlct2ZXhj8/maxresdefault.jpg"></td>
+    </tr>
+    <tr>
+        <td>Rau trộn</td>
+        <td><img
+                src="https://hyhouse.com.vn/wp-content/uploads/2019/09/hyhouse-salad-rau-tron-mayonnaise-giam-can-nhanh-02-600x400.jpg">
+        </td>
+    </tr>
+    <tr>
+        <td>Hầm</td>
+        <td><img src="https://yummyday.vn/uploads/images/gio-heo-ham-thuoc-bac.jpg"></td>
+    </tr>
+    <tr>
+        <td>Gà rang muối</td>
+        <td><img src="https://cdn.daynauan.info.vn/wp-content/uploads/2020/08/ga-rang-muoi.jpg"></td>
+    </tr>
+    <tr>
+        <td>Ăn vặt</td>
+        <td><img src="https://kenh14cdn.com/2018/9/17/met-do-chien-4-1537147860271397731701.jpg"></td>
+    </tr>
+    <tr>
+        <td>Thịt kho</td>
+        <td><img
+                src="https://cdn.tgdd.vn/Files/2021/10/23/1392990/doi-vi-ca-nha-voi-thit-kho-nuoc-mia-sieu-dua-com-khien-ai-cung-thich-me-202110231725332717.jpg">
+        </td>
+    </tr>
+    <tr>
+        <td>Thịt nướng</td>
+        <td><img src="https://cdn.daotaobeptruong.vn/wp-content/uploads/2020/05/cach-uop-thit-nuong.jpg"></td>
+    </tr>
+    <tr>
+        <td>Gỏi</td>
+        <td><img src="https://cdn.daynauan.info.vn/wp-content/uploads/2015/06/goi-buoi-tom-thit.jpg"></td>
+    </tr>
+    <tr>
+        <td>Chè</td>
+        <td><img src="https://i.pinimg.com/736x/49/ab/42/49ab42dc4a4fcbc68ce954c16aa05e02.jpg"></td>
+    </tr>
+    <tr>
+        <td>Ốc nấu chuối đậu</td>
+        <td><img
+                src="https://image-us.eva.vn/upload/4-2022/images/2022-10-23/1666527167-57-thumbnail-width640height480.jpg">
+        </td>
+    </tr>
+
+</table>
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
